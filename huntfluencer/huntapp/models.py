@@ -1,5 +1,4 @@
 import datetime
-
 from django.db import models
 from django.utils import timezone
 """retenez le guide en trois étapes pour effectuer des modifications aux modèles :
@@ -13,10 +12,11 @@ class Influenceur(models.Model):
     gender = models.CharField(max_length=1)
     nationality  = models.CharField(max_length=200)
     nbr_followers = models.IntegerField(default=0)
-    pub_date = models.DateTimeField('date published')
+    #pub_date = models.DateTimeField('date published')
     theme = models.CharField(max_length=200)
     experience = models.CharField(max_length=200)
     link = models.CharField(max_length=300)
+    photo = models.CharField(max_length=300, null = True)
 
 
 class Question(models.Model):
