@@ -16,8 +16,9 @@ class Influenceur(models.Model):
     theme = models.CharField(max_length=200)
     experience = models.CharField(max_length=200)
     link = models.CharField(max_length=300)
-    photo = models.CharField(max_length=300, null = True)
-
+    photo = models.CharField(max_length=300, null = True )
+    def __str__(self):
+        return self.username
 
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
