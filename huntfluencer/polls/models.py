@@ -1,6 +1,13 @@
+import datetime
 from django.db import models
-
+from django.utils import timezone
 # Create your models here.
+
+"""retenez le guide en trois étapes pour effectuer des modifications aux modèles :
+
+Modifiez les modèles (dans models.py).
+Exécutez python manage.py makemigrations pour créer des migrations correspondant à ces changements.
+Exécutez python manage.py migrate pour appliquer ces modifications à la base de données."""
 
 NATION_CHOICES = (
     ("French", "French"),
@@ -51,3 +58,15 @@ class Arbre(models.Model):
 
 
 
+class Influenceur(models.Model):
+  username = models.CharField(max_length=200)
+  gender = models.CharField(max_length=1)
+  nationality  = models.CharField(max_length=200)
+  nbr_followers = models.IntegerField(default=0)
+  #pub_date = models.DateTimeField('date published')
+  theme = models.CharField(max_length=200)
+  experience = models.CharField(max_length=200)
+  link = models.CharField(max_length=300)
+  photo = models.CharField(max_length=300, null = True )
+  def __str__(self):
+    return self.username
