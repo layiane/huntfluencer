@@ -16,4 +16,8 @@ def trouver_mon_influenceur(request):
 
 def contact(request):
     return render(request,'contact.html')
+
+def forms(request):
+    return render(request,'forms.html')
    
+
