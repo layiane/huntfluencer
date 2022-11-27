@@ -21,7 +21,6 @@ def contact(request):
 def forms(request):
 
         # return HttpResponse("This is a post request")
-
     list_themes =  [i[0] for i in list(Influenceur.objects.values_list('theme').distinct())]
     list_xp =  [i[0] for i in list(Influenceur.objects.values_list('experience').distinct())]
     list_genres =  [i[0] for i in list(Influenceur.objects.values_list('gender').distinct())]
