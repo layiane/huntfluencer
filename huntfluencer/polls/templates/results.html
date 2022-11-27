@@ -76,7 +76,7 @@
         }
 
         .content-table {
-            table-layout: auto;
+            table-layout: fixed;
             width: 100%;
             border-collapse: collapse;
             margin: 25px 0;
@@ -90,18 +90,22 @@
         .content-table thead tr {
             background-color: #009879;
             color: #ffffff;
-            text-align: left;
+            text-align: center;
             font-weight: bold;
-            
+
         }
 
         .content-table th,
         .content-table td {
             padding: 12px 15px;
+            text-align: center;
+
         }
 
         .content-table tbody tr {
             border-bottom: 1px solid #dddddd;
+            text-align: center;
+
         }
 
         .content-table tbody tr:nth-of-type(even) {
@@ -115,6 +119,15 @@
         .content-table tbody tr.active-row {
             font-weight: bold;
             color: #009879;
+
+        }
+
+        table {
+            width: 100%;
+        }
+
+        th {
+            height: 70px;
         }
     </style>
 
@@ -179,12 +192,10 @@
                 </center>
             </div>
         </body>
-        <br/>
-        <br/>
-        <br/>
+        <br />
+        <br />
+        <br />
         <footer class="mt-auto text-white-50">
-            <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a
-                    href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
         </footer>
     </div>
 

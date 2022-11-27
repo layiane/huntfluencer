@@ -40,8 +40,6 @@ def results_form(request):
     choix_xp=request.POST.get('experience',None)
     choix_genre=request.POST.get('gender',None)
     choix_nationalite=request.POST.get('langue',None)
-    test = request.POST.get('your_name')
-    print(test)
     print(choix_theme,choix_xp,choix_genre,choix_nationalite)
     results= Influenceur.objects.filter(gender=choix_genre,nationality=choix_nationalite,theme=choix_theme,experience = choix_xp)
     print(results)

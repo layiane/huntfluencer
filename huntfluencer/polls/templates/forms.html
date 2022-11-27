@@ -97,8 +97,8 @@
         <br />
         <h1>Find your influencer !</h1>
         <center>
-          <FONT face="Verdana"><label for="model-select">Choose a nationality for your influencer:</FONT></label>
-          <select name="langue" id="langue" }'>
+          <h4><FONT face="Verdana"><label for="model-select">Choose a nationality for your influencer:</FONT></label> </h4>
+          <select name="langue" id="langue" class="form-control"}'>
             {% for langue in list_nationalites %}
             <option>{{langue}}
               {% endfor %}
@@ -107,8 +107,8 @@
         <br />
         <br />
         <center>
-          <FONT face="Verdana"><label for="model-select">Experiment:</FONT></label>
-          <select name="experience" id="experience" }'>
+          <h4><FONT face="Verdana"><label for="model-select">Experience:</FONT></label></h4>
+          <select name="experience" id="experience" class="form-control"}'>
             {% for experience in list_xp %}
             <option>{{experience}}
               {% endfor %}
@@ -116,8 +116,8 @@
         </center>
         <br />
         <br />
-        <FONT face="Verdana"><label for="model-select">Choose the gender of the influencer :</FONT></label>
-        <select name="gender" id="gender" }'>
+        <h4><FONT face="Verdana"><label for="model-select">Choose the gender of the influencer :</FONT></label></h4>
+        <select name="gender" id="gender" class="form-control"}'>
           {% for genre in list_genres %}
           <option>{{genre}}
             {% endfor %}
@@ -125,16 +125,13 @@
         </center>
         <br />
         <br />
-        <FONT face="Verdana"><label for="model-select">Choose type of influencer :</FONT></label>
-        <select name="theme" id="theme">
+        <h4><FONT face="Verdana"><label for="model-select">Choose type of influencer :</FONT></label></h4>
+        <select name="theme" id="theme" class="form-control">
           <option placeholder>theme
             {% for theme in list_themes %}
           <option>{{theme}}
             {% endfor %}
         </select>
-        <br />
-        <label for="your_name">Your name: </label>
-        <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
         <br />
         <br />
         <button type="submit" name="system" value="system" form="SystemForm"
