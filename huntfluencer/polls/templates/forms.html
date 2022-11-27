@@ -1,146 +1,157 @@
 <!doctype html>
 <html lang="en" class="h-100">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.104.2">
-    <title>Cover Template · Bootstrap v5.2</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/cover/">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.104.2">
+  <title>Cover Template · Bootstrap v5.2</title>
 
-    
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/cover/">
 
-    
 
-{% load static %}
-<link href="{% static 'bootstrap.min.css'%}" rel="stylesheet">
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
+
+
+  {% load static %}
+  <link href="{% static 'bootstrap.min.css'%}" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
       }
+    }
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
+    .b-example-divider {
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
 
-      .b-example-divider {
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
 
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
 
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
 
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-    </style>
-
-    
-    <!-- Custom styles for this template -->
-    {% load static %}
-    <link href="{% static 'cover.css'%}" rel="stylesheet">
-  </head>
-  <body class="d-flex h-100 text-center text-bg-dark">
-    
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-  <header class="mb-auto">
-    <div>
-      <h3 class="float-md-start mb-0">Huntfluencer</h3>
-      <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class= "nav-link fw-bold py-1 px-0" href="{% url 'home' %}">Home</a>
-        <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Trouver mon influenceur</a>
-        <a class="nav-link fw-bold py-1 px-0" href="{% url 'contact' %}">Nous contacter</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="px-3">
-    <h1>Find your influencer !</h1>
-    <p class="lead">        <center><FONT face="Verdana"><label for="model-select">Choose a nationality for your influencer:</FONT></label>
-        <form action method= "POST">
-            <select name="model" id = "model-select" onchange = 'if(this.value!=0) {this.form.submit();}'>
-                <option value="0">--Nationality--</option>
-                <option value="French">French</option>
-                <option value="English">English</option>
-            </select>
-        </form>
-    </center>
-            <center><FONT face="Verdana"><label for="model-select">Experiment:</FONT></label>
-        <form action method= "POST">
-            <select name="model" id = "model-select" onchange = 'if(this.value!=0) {this.form.submit();}'>
-                <option value="0">--Experiment--</option>
-                <option value="Advanced">Advanced</option>
-                <option value="Intermediate">Intermediate</option>
-            </select>
-        </form>
-    </center>
-            <center><FONT face="Verdana"><label for="model-select">Choose gender:</FONT></label>
-        <form action method= "POST"">
-            <select name="model" id = "model-select" onchange = 'if(this.value!=0) {this.form.submit();}'>
-                <option value="0">--Choose gender--</option>
-                <option value="Man">Man</option>
-                <option value="Women">Women</option>
-            </select>
-        </form>
-    </center>
-            <center><FONT face="Verdana"><label for="model-select">Choose type of influencer :</FONT></label>
-        <form action method= "POST"">
-            <select name="model" id = "model-select" onchange = 'if(this.value!=0) {this.form.submit();}'>
-                <option value="0">--Choose type--</option>
-                <option value="Food">Food</option>
-                <option value="Beauty">Beauty</option>
-                <option value="Travel">Travel</option>
-                <option value="High Tech">High_Tech</option>
-                <option value="Sport">Sport</option>
-            </select>
-        </form>
-        <input type="submit" name="" value="envoyer">
-    </center>
-</p>
-
-  </main>
-
-  <footer class="mt-auto text-white-50">
-    <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
-  </footer>
-</div>
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+  </style>
 
 
-    
-  </body>
+  <!-- Custom styles for this template -->
+  {% load static %}
+  <link href="{% static 'cover.css'%}" rel="stylesheet">
+</head>
+
+<body class="d-flex h-100 text-center text-bg-dark">
+
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+      <div>
+        <h3 class="float-md-start mb-0">Huntfluencer</h3>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+          <a class="nav-link fw-bold py-1 px-0" href="{% url 'home' %}">Home</a>
+          <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Trouver mon influenceur</a>
+          <a class="nav-link fw-bold py-1 px-0" href="{% url 'contact' %}">Nous contacter</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="px-3">
+      <form action="{% url 'results' %}" method="post" id="SystemForm">
+        {% csrf_token %}
+        <br />
+        <h1>Find your influencer !</h1>
+        <center>
+          <FONT face="Verdana"><label for="model-select">Choose a nationality for your influencer:</FONT></label>
+          <select name="langue" id="langue" }'>
+            {% for langue in list_nationalites %}
+            <option>{{langue}}
+              {% endfor %}
+          </select>
+        </center>
+        <br />
+        <br />
+        <center>
+          <FONT face="Verdana"><label for="model-select">Experiment:</FONT></label>
+          <select name="experience" id="experience" }'>
+            {% for experience in list_xp %}
+            <option>{{experience}}
+              {% endfor %}
+          </select>
+        </center>
+        <br />
+        <br />
+        <FONT face="Verdana"><label for="model-select">Choose the gender of the influencer :</FONT></label>
+        <select name="gender" id="gender" }'>
+          {% for genre in list_genres %}
+          <option>{{genre}}
+            {% endfor %}
+        </select>
+        </center>
+        <br />
+        <br />
+        <FONT face="Verdana"><label for="model-select">Choose type of influencer :</FONT></label>
+        <select name="theme" id="theme">
+          <option placeholder>theme
+            {% for theme in list_themes %}
+          <option>{{theme}}
+            {% endfor %}
+        </select>
+        <br />
+        <label for="your_name">Your name: </label>
+        <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
+        <br />
+        <br />
+        <button type="submit" name="system" value="system" form="SystemForm"
+          class="btn btn-outline-success my-2 my-sm-0">Recherche</button>
+
+      </form>
+      </center>
+    </main>
+
+    <footer class="mt-auto text-white-50">
+      <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a
+          href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
+    </footer>
+  </div>
+
+
+
+</body>
+
 </html>
