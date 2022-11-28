@@ -7,6 +7,7 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.104.2">
     <title>Cover Template · Bootstrap v5.2</title>
+    <link rel="icon" type="image/x-icon" href="../static/lasso.ico">
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/cover/">
 
@@ -74,7 +75,7 @@
     {% load static %}
     <link href="{% static 'cover.css'%}" rel="stylesheet">
   </head>
-  <body class="d-flex h-100 text-center text-bg-dark">
+<body class="d-flex h-100 text-center text-bg-dark" >
     
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="mb-auto">
@@ -88,13 +89,55 @@
     </div>
   </header> 
 
-  <main class="px-3">
-    <h1>Qui sommes nous ?</h1>
-    <p class="lead">Nous sommes un groupe d'étudiants ayant pour but de simplifier votre recherche d'influenceurs</p>
-    <p class="lead">
+  <div class="container px-4 py-5" id="custom-cards">
+    <h2 class="pb-2 ">why Huntfluencer ?</h2>
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-4">
+
       
-    </p>
-  </main>
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('../static/target.jpeg'); 
+        background-size:160%;background-repeat:no-repeat;background-position: top;">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h3 class="pt-2 mt-5 mb-4 display-6 lh-1 fw-bold">reach your target audience</h3>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <img src="../static/cible.png" width="32" height="32">
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('../static/time.jpg');
+        background-size:200%;background-repeat:no-repeat;background-position: top;">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h3 class="pt-4 mt-5 mb-4 display-6 lh-1 fw-bold">earn time of research</h3>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <img src="../static/chrono.png" width="32" height="32">
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('../static/sales.jpeg');
+        background-size:160%;background-repeat:no-repeat;background-position: top;">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+            <h3 class="pt-4 mt-5 mb-4 display-6 lh-1 fw-bold">boost your sales</h3>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <img src="../static/increase.png"  width="32" height="32">
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <footer class="mt-auto text-white-50">
     <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
@@ -103,5 +146,5 @@
 
 
     
-  </body>
+</body>
 </html>
