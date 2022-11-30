@@ -107,22 +107,23 @@
         <br />
         <br />
         <center>
-          <FONT face="Verdana"><label for="model-select">Experiment:</FONT></label>
-          <select name="experience" id="experience" }'>
-            {% for experience in list_xp %}
-            <option>{{experience}}
+          <FONT face="Verdana"><label for="model-select">Nombre follower min:</FONT></label>
+          <select name="follower_min" id="follower_min" >
+            {% for follower_min in list_followers_min %}
+            <option>{{follower_min}}
               {% endfor %}
           </select>
         </center>
         <br />
         <br />
-        <FONT face="Verdana"><label for="model-select">Choose the gender of the influencer :</FONT></label>
-        <select name="gender" id="gender" }'>
-          {% for genre in list_genres %}
-          <option>{{genre}}
+       <center>
+        <FONT face="Verdana"><label for="model-select">Nombre follower max :</FONT></label>
+        <select name="follower_max" id="follower_max" >
+          {% for follower_max in list_followers_max %}
+          <option>{{follower_max}}
             {% endfor %}
         </select>
-        </center>
+      </center>
         <br />
         <br />
         <FONT face="Verdana"><label for="model-select">Choose type of influencer :</FONT></label>

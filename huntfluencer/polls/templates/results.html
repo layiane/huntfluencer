@@ -143,7 +143,7 @@
 
         <body class="px-3">
             <div class="custom-control">
-                {% if results %}
+                {% if not results_2.empty %}
                 <center>
                     <br />
                     <br />
@@ -151,23 +151,19 @@
                     <table class="content-table">
                         <thead class="thead-light">
                             <tr>
-                                <th scope="col"><strong>Influenceur Name</strong></th>
-                                <th scope="col"><strong>Genre</strong></th>
-                                <th scope="col"><strong>Nationality €</strong></th>
+                                <th scope="col"><strong>Influenceur Instagram Name</strong></th>
+                                <th scope="col"><strong>Nationality </strong></th>
                                 <th scope="col"><strong>Theme</strong></th>
-                                <th scope="col"><strong>Experience</strong></th>
                                 <th scope="col"><strong>Number of follower</strong></th>
+                                <th scope="col"><strong>Like average</strong></th>
                             </tr>
                         </thead>
-                        {% for result in results %}
+                        {% for row in results_2 %}
                         <tbody>
                             <tr>
-                                <td>{{result.username}}</td>
-                                <td>{{result.gender}}</td>
-                                <td>{{result.nationality}}</td>
-                                <td>{{result.theme}}</td>
-                                <td>{{result.experience}}</td>
-                                <td>{{result.nbr_followers}}</td>
+                                {% for i in row %}
+                                <td>{{i}}</td>
+                                {% endfor %}
                             </tr>
                         </tbody>
 
