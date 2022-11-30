@@ -133,27 +133,26 @@
                     <h3 class="float-md-start mb-0" ><a href="{% url 'home' %} "style="color:#ffffff;text-decoration:none;">Huntfluencer</a></h3>
                     <nav class="nav nav-masthead justify-content-center float-md-end">
                         <a class="nav-link fw-bold py-1 px-0" href="{% url 'home' %}">Home</a>
-                        <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Trouver mon
-                            influenceur</a>
-                        <a class="nav-link fw-bold py-1 px-0" href="{% url 'contact' %}">Nous contacter</a>
+                        <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Find my influencer</a>
+                        <a class="nav-link fw-bold py-1 px-0" href="{% url 'contact' %}">Contact us</a>
                     </nav>
             </div>
             </center>
         </header>
 
-        <body class="px-3">
+        <body class="px-3"> 
             <div class="custom-control">
                 {% if results %}
                 <center>
                     <br />
                     <br />
-                    <h1>Resultat(s) pour les critères choisis:</h1>
+                    <h1>Results for the criteria :</h1>
                     <table class="content-table">
                         <thead class="thead-light">
                             <tr>
-                                <th scope="col"><strong>Influenceur Name</strong></th>
+                                <th scope="col"><strong>Influencer Name</strong></th>
                                 <th scope="col"><strong>Genre</strong></th>
-                                <th scope="col"><strong>Nationality €</strong></th>
+                                <th scope="col"><strong>Nationality</strong></th>
                                 <th scope="col"><strong>Theme</strong></th>
                                 <th scope="col"><strong>Experience</strong></th>
                                 <th scope="col"><strong>Number of follower</strong></th>
@@ -174,7 +173,7 @@
                         {% endfor %}
                     </table>
                     {% else %}
-                    Pas de resultat pour ces critères!
+                    No result for these criteria!
                     {% endif %}
                 </center>
             </div>
@@ -183,8 +182,6 @@
         <br/>
         <br/>
         <footer class="mt-auto text-white-50">
-            <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a
-                    href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
         </footer>
     </div>
 
