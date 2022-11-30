@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from polls.models import Influenceur
-
+from django.core.mail import send_mail
 
 # Create your views here.
 def home(request):
@@ -54,7 +54,3 @@ def results_form(request):
 
     }
     return render(request,'results.html',context)
-
-
-   
-
