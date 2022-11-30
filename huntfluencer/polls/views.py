@@ -55,12 +55,8 @@ def results_form(request):
     #print(choix_theme,choix_xp,choix_genre,choix_nationalite)
     #results= Influenceur.objects.filter(gender=choix_genre,nationality=choix_nationalite,theme=choix_theme,experience = choix_xp)
     results= recup_country_category(choix_nationalite,choix_theme,int(choix_followers_min), int(choix_followers_max))
-    results_2 = results.values.tolist()
+    results= results.values.tolist()
     #print(results)
-    print(results_2)
-    for row in results_2:
-        for i in row:
-            print(i)
     context = {
         'theme' : choix_theme,
         #'xp' : choix_xp,
@@ -106,8 +102,8 @@ def recup_country_category(country, category,n,j):
     dataset_1 = pd.DataFrame(
     {"name": name,
      "country": country,
-     "followers": followers,
      "category" : f"{category}",
+     "followers": followers,
      "like_average" : like
     })
     print(dataset_1)
@@ -121,16 +117,16 @@ def recup_country_category(country, category,n,j):
     dataset_2 = pd.DataFrame(
     {"name": name,
      "country": country,
-     "followers": followers,
      "category" : f"{category}",
+     "followers": followers,
      "like_average" : like
     })
-    print(dataset_2)
+    print('test',dataset_2)
     #fusion
     dataset = pd.concat([dataset_1,dataset_2])
     print(dataset)
     print(f"test: {country_name}")
-    df = dataset[(dataset.followers>n) & (dataset.followers <j) & (dataset.country == country_name)]
-    print(df['country'].value_counts())
+    print(dataset['country'].value_counts())
+    df = dataset[(dataset.followers>=n) & (dataset.followers<=j) & (dataset.country == "United States")]
     print(df[df['country'] == country_name])
-    return df.sample(5).sort_values(by=['followers'])
+    return df.sort_values(by=['followers'])
