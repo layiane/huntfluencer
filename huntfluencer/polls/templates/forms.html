@@ -8,7 +8,7 @@
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.104.2">
   <title>Cover Template · Bootstrap v5.2</title>
-  <link rel="icon" type="image/x-icon" href="../static/lasso.ico">
+
   <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/cover/">
 
 
@@ -69,8 +69,25 @@
       white-space: nowrap;
       -webkit-overflow-scrolling: touch;
     }
+    .s-select>select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0.6em 0.7em;
+    padding-right: var(--su32);
+    border: 1px solid var(--bc-darker);
+    border-radius: var(--br-sm);
+    background-color: var(--white);
+    outline: 0;
+    font-size: var(--fs-body1);
+    font-family: inherit;
+    color: var(--black);
+    line-height: var(--lh-sm);
+}
   </style>
-
 
   <!-- Custom styles for this template -->
   {% load static %}
@@ -90,62 +107,62 @@
         </nav>
       </div>
     </header>
+    <h1>Find your influencer !</h1>
+    <br>
+    <br>
+    <br>
 
-    <main class="px-3">
-      <form action="{% url 'results' %}" method="post" id="SystemForm">
-        {% csrf_token %}
-        <br />
-        <h1>Find your influencer !</h1>
-        <center>
-          <FONT face="Verdana"><label for="model-select">Choose a nationality for your influencer:</FONT></label>
-          <select name="langue" id="langue" }'>
-            {% for langue in list_nationalites %}
-            <option>{{langue}}
+      <main class="px-3">
+        <form action="{% url 'results' %}" method="post" id="SystemForm">
+          {% csrf_token %}
+          <center>
+            <FONT face="sans-serif" size = 5><label for="model-select"><b>Choose a nationality for your influencer :</b></FONT></label>
+            <select name="langue" id="langue" class="form-control">
+              {% for langue in list_nationalites %}
+              <option>{{langue}}
+                {% endfor %}
+            </select>
+          </center>
+          <br />
+          <br />
+          <center>
+            <FONT face="sans-serif" size = 5><label for="model-select"><b>Number of followers min :</b></FONT></label>
+            <select name="follower_min" id="follower_min" class="form-control">
+              {% for follower_min in list_followers_min %}
+              <option>{{follower_min}}
+                {% endfor %}
+            </select>
+          </center>
+          <br />
+          <br />
+          <center>
+            <FONT face="sans-serif" size = 5><label for="model-select"><b>Number of followers max :</b></FONT></label>
+            <select name="follower_max" id="follower_max" class="form-control">
+              {% for follower_max in list_followers_max %}
+              <option>{{follower_max}}
+                {% endfor %}
+            </select>
+          </center>
+          <br />
+          <br />
+          <FONT face="sans-serif" size = 5><label for="model-select" ><b>Type of influencer :</b></FONT></label>
+          <select name="theme" id="theme"  class="form-control">
+            <option for="theme" class="visually-hidden" >Theme</option>
+              {% for theme in list_themes %}
+            <option>{{theme}}
               {% endfor %}
           </select>
-        </center>
-        <br />
-        <br />
-        <center>
-          <FONT face="Verdana"><label for="model-select">Experiment:</FONT></label>
-          <select name="experience" id="experience" }'>
-            {% for experience in list_xp %}
-            <option>{{experience}}
-              {% endfor %}
-          </select>
-        </center>
-        <br />
-        <br />
-        <FONT face="Verdana"><label for="model-select">Choose the gender of the influencer :</FONT></label>
-        <select name="gender" id="gender" }'>
-          {% for genre in list_genres %}
-          <option>{{genre}}
-            {% endfor %}
-        </select>
-        </center>
-        <br />
-        <br />
-        <FONT face="Verdana"><label for="model-select">Choose type of influencer :</FONT></label>
-        <select name="theme" id="theme">
-          <option placeholder>theme
-            {% for theme in list_themes %}
-          <option>{{theme}}
-            {% endfor %}
-        </select>
-        <br />
-        <label for="your_name">Your name: </label>
-        <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
-        <br />
-        <br />
-        <button type="submit" name="system" value="system" form="SystemForm"
-          class="btn btn-outline-success my-2 my-sm-0">Recherche</button>
+          <br />
+          <br />
+          <button type="submit" name="system" value="system" form="SystemForm"
+            class="btn btn-outline-success my-2 my-sm-0" size="5" >Research</button>
 
-      </form>
-      </center>
-    </main>
+        </form>
+        </center>
+      </main>
 
-    <footer class="mt-auto text-white-50">
-    </footer>
+      <footer class="mt-auto text-white-50">
+      </footer>
   </div>
 
 

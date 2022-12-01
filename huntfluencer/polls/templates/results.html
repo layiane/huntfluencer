@@ -133,47 +133,43 @@
                     <h3 class="float-md-start mb-0" ><a href="{% url 'home' %} "style="color:#ffffff;text-decoration:none;">Huntfluencer</a></h3>
                     <nav class="nav nav-masthead justify-content-center float-md-end">
                         <a class="nav-link fw-bold py-1 px-0" href="{% url 'home' %}">Home</a>
-                        <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Find my influencer</a>
-                        <a class="nav-link fw-bold py-1 px-0" href="{% url 'contact' %}">Contact us</a>
+                        <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Trouver mon
+                            influenceur</a>
+                        <a class="nav-link fw-bold py-1 px-0" href="{% url 'contact' %}">Nous contacter</a>
                     </nav>
             </div>
             </center>
         </header>
 
-        <body class="px-3"> 
+        <body class="px-3">
             <div class="custom-control">
-                {% if results %}
+                {% if not results_2.empty %}
                 <center>
                     <br />
                     <br />
-                    <h1>Results for the criteria :</h1>
+                    <h1>Results for the chosen criteria :</h1>
                     <table class="content-table">
                         <thead class="thead-light">
                             <tr>
-                                <th scope="col"><strong>Influencer Name</strong></th>
-                                <th scope="col"><strong>Genre</strong></th>
-                                <th scope="col"><strong>Nationality</strong></th>
+                                <th scope="col"><strong>Influencer Instagram Name</strong></th>
+                                <th scope="col"><strong>Nationality </strong></th>
                                 <th scope="col"><strong>Theme</strong></th>
-                                <th scope="col"><strong>Experience</strong></th>
-                                <th scope="col"><strong>Number of follower</strong></th>
+                                <th scope="col"><strong>Number of followers</strong></th>
+                                <th scope="col"><strong>Like average</strong></th>
                             </tr>
                         </thead>
-                        {% for result in results %}
+                        {% for row in results_2 %}
                         <tbody>
                             <tr>
-                                <td>{{result.username}}</td>
-                                <td>{{result.gender}}</td>
-                                <td>{{result.nationality}}</td>
-                                <td>{{result.theme}}</td>
-                                <td>{{result.experience}}</td>
-                                <td>{{result.nbr_followers}}</td>
+                                {% for i in row %}
+                                <td>{{i}}</td>
+                                {% endfor %}
                             </tr>
                         </tbody>
-
                         {% endfor %}
                     </table>
                     {% else %}
-                    No result for these criteria!
+                    <No results for these criteria>
                     {% endif %}
                 </center>
             </div>
