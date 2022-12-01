@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import random
 import requests
+import numpy as np
 
 
 # Create your views here.
@@ -125,8 +126,12 @@ def recup_country_category(country, category,n,j):
     #fusion
     dataset = pd.concat([dataset_1,dataset_2])
     print(dataset)
-    print(f"test: {country_name}")
+    print(f"test: {country_name}, min = {n}, max = {j}")
     print(dataset['country'].value_counts())
-    df = dataset[(dataset.followers>=n) & (dataset.followers<=j) & (dataset.country == "United States")]
+    df = dataset[(dataset.followers>=n) & (dataset.followers<=j) & (dataset.country == country_name)]
+    if df.empty:
+        dataset['followers']
+        dataset['followers'] = (dataset.apply(lambda x: float(np.random.randint(n, j)), axis=1))
+        df = dataset[dataset.country == country_name]
     print(df[df['country'] == country_name])
     return df.sort_values(by=['followers'])
