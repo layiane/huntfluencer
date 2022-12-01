@@ -134,4 +134,6 @@ def recup_country_category(country, category,n,j):
         dataset['followers'] = (dataset.apply(lambda x: float(np.random.randint(n, j)), axis=1))
         df = dataset[dataset.country == country_name]
     print(df[df['country'] == country_name])
-    return df.sort_values(by=['followers'])
+    if df.shape[0]>5:
+        df = df.sample(5).sort_values(by=['followers'])
+    return df.sort_values(by=['followers'],ascending=False)
