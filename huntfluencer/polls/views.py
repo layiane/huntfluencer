@@ -95,7 +95,7 @@ def recup_country_category(country, category,n,j):
     if country == "united-states":
         country_name = "United States"
     elif country == "united-kingdom":
-        country_name = " United Kingdom"
+        country_name = "United Kingdom"
     else: 
         country_name = country.title()
     print(country_name)
@@ -117,9 +117,9 @@ def recup_country_category(country, category,n,j):
     r = requests.get(f"https://hypeauditor.com/top-instagram-{category}-{country}/?p=2")
     soup = BeautifulSoup(r.content) 
     name = [tr.text for tr in soup.find_all(class_="contributor__name-content")]
-    followers = text_to_num([tr.text for tr in soup.find_all(class_="row-cell authentic")])
+    followers = text_to_num([int(tr.text) for tr in soup.find_all(class_="row-cell authentic")])
     country = [tr.text for tr in soup.find_all(class_="row-cell audience")]
-    like = text_to_num([tr.text for tr in soup.find_all(class_="row-cell engagement")])
+    like = text_to_num([int(tr.text) for tr in soup.find_all(class_="row-cell engagement")])
     dataset_2 = pd.DataFrame(
     {"name": name,
      "country": country,
@@ -136,9 +136,12 @@ def recup_country_category(country, category,n,j):
     df = dataset[(dataset.followers>=n) & (dataset.followers<=j) & (dataset.country == country_name)]
     if df.empty:
         dataset['followers']
-        dataset['followers'] = (dataset.apply(lambda x: float(np.random.randint(n, j)), axis=1))
+        dataset['followers'] = (dataset.apply(lambda x: int(np.random.randint(n, j)), axis=1))
+        dataset['like_average'] = dataset['like_average'].apply(int)
         df = dataset[dataset.country == country_name]
     print(df[df['country'] == country_name])
+    df["followers"] = dataset['followers'].apply(int)
+    df["like_average"] = dataset['like_average'].apply(int)
     if df.shape[0]>5:
         df = df.sample(5).sort_values(by=['followers'])
     return df.sort_values(by=['followers'],ascending=False)

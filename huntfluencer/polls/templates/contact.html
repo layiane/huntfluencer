@@ -1,109 +1,270 @@
 <!doctype html>
 <html lang="en" class="h-100">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.104.2">
-    <link rel="icon" type="image/x-icon" href="../static/lasso.ico">
-    <title>Cover Template · Bootstrap v5.2</title>
 
-    
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.104.2">
+  <link rel="icon" type="image/x-icon" href="../static/lasso.ico">
+  <title>Cover Template · Bootstrap v5.2</title>
 
-    
 
-{% load static %}
-<link href="{% static 'bootstrap.min.css'%}" rel="stylesheet">
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
+
+
+  {% load static %}
+  <link href="{% static 'bootstrap.min.css'%}" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    .textarea {
+      background-color: #dddddd;
+      color: #666666;
+      padding: 1em;
+      border-radius: 10px;
+      border: 2px solid transparent;
+      outline: none;
+      font-family: "Heebo", sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1.4;
+      width: 500px;
+      height: 200px;
+      transition: all 0.2s;
+    }
+
+    .textarea:hover {
+      cursor: pointer;
+      background-color: #eeeeee;
+    }
+
+    .textarea:focus {
+      cursor: text;
+      color: #333333;
+      background-color: white;
+      border-color: #333333;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
       }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-      .b-example-divider {
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
-
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
-
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
-
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-    </style>
-
-    
-    <!-- Custom styles for this template -->
-    {% load static %}
-    <link href="{% static 'cover.css'%}" rel="stylesheet">
-  </head>
-  <body class="d-flex h-100 text-center text-bg-dark">
-    
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-  <header class="mb-auto">
-    <div>
-      <h3 class="float-md-start mb-0" ><a href="{% url 'home' %} "style="color:#ffffff;text-decoration:none;">Huntfluencer</a></h3>
-      <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class= "nav-link fw-bold py-1 px-0" href="{% url 'home' %}">Home</a>
-        <a class="nav-link fw-bold py-1 px-0" href="{% url 'trouver_mon_influenceur' %}">Find my influencer</a>
-        <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Contact us</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="px-3">
-    <h1>Contact us </h1>
-    <p class="lead"><ul>
-      <a>email : huntfluencer@gmail.com <br/></a>
-      <a>phone : 07 43 84 52 23</a>
-  </ul></p>
-    <p class="lead">
-      
-    </p>
-  </main>
-
-  <footer class="mt-auto text-white-50">
-  </footer>
-</div>
+    }
 
 
-    
-  </body>
+    .input {
+      background-color: #dddddd;
+      color: #666666;
+      padding: 1em;
+      border-radius: 10px;
+      border: 2px solid transparent;
+      outline: none;
+      font-family: "Heebo", sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1.4;
+      height: 20px;
+      width: 220px;
+      transition: all 0.2s;
+    }
+
+    .input:hover {
+      cursor: pointer;
+      background-color: #eeeeee;
+    }
+
+    .input:focus {
+      cursor: text;
+      color: #333333;
+      background-color: white;
+      border-color: #333333;
+    }
+
+    .b-example-divider {
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  min-width: 300px;
+  min-height: 60px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: #4FD1C5;
+background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+  }
+
+button::before {
+content: '';
+  border-radius: 1000px;
+  min-width: calc(300px + 12px);
+  min-height: calc(60px + 12px);
+  border: 6px solid #00FFCB;
+  box-shadow: 0 0 60px rgba(0,255,203,.64);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all .3s ease-in-out 0s;
+}
+
+.button:hover, .button:focus {
+  color: #313133;
+  transform: translateY(-6px);
+}
+
+button:hover::before, button:focus::before {
+  opacity: 1;
+}
+
+button::after {
+  content: '';
+  width: 30px; height: 30px;
+  border-radius: 100%;
+  border: 6px solid #00FFCB;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+}
+
+button:hover::after, button:focus::after {
+  animation: none;
+  display: none;
+}
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  {% load static %}
+  <link href="{% static 'cover.css'%}" rel="stylesheet">
+</head>
+
+<body class="d-flex h-100 text-center text-bg-dark">
+
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+      <div>
+        <h3 class="float-md-start mb-0"><a href="{% url 'home' %} "
+            style="color:#ffffff;text-decoration:none;">Huntfluencer</a></h3>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+          <a class="nav-link fw-bold py-1 px-0" href="{% url 'home' %}">Home</a>
+          <a class="nav-link fw-bold py-1 px-0" href="{% url 'trouver_mon_influenceur' %}">Find my influencer</a>
+          <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Contact us</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="px-3">
+      <h1>Feel free to reach out</h1>
+      <h5>Any comments ? A suggestion ? Do not hesitate to write to us !</h5>
+
+      <!-- <form action="mailto:info@w3docs.com" method="get" enctype="text/plain"> -->
+      <p>Your name (mandatory) : <input class="input" type="text" name="name" /></p>
+      <p>Our personnal email : <input class="input" type="text" name="email" value="huntfluencer@gmail.com"  /></p>
+      <p>Your email (mandatory): <input class="input" type="text" name="email" /></p>
+      <p>Subject of your email : <input class="input" type="text" name="email" /></p>
+      <p>
+        Your message
+        <br />
+        <textarea class="textarea" placeholder="Enter a message..."></textarea>
+        <br />
+      </p>
+
+
+      <p>
+      <form class="mt-4">
+        <div class="wrap">
+          <button class="button">submit</button>
+        </div>
+      </form>
+      </p>
+      <!-- </form> -->
+    </main>
+
+    <footer class="mt-auto text-white-50">
+      <br></br>
+    </footer>
+  </div>
+
+
+
+</body>
+
 </html>

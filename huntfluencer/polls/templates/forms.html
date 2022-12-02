@@ -117,7 +117,7 @@
           {% csrf_token %}
           <center>
             <FONT face="sans-serif" size = 5><label for="model-select"><b>Choose a nationality for your influencer :</b></FONT></label>
-            <select name="langue" id="langue" class="form-control">
+            <select name="langue" id="langue" class="form-control" style="width:460px; text-align-last:center;">
               {% for langue in list_nationalites %}
               <option>{{langue}}
                 {% endfor %}
@@ -127,7 +127,7 @@
           <br />
           <center>
             <FONT face="sans-serif" size = 5><label for="model-select"><b>Number of followers min :</b></FONT></label>
-            <select name="follower_min" id="follower_min" class="form-control">
+            <select name="follower_min" id="follower_min" class="form-control" style="width:300px; text-align-last:center;">
               {% for follower_min in list_followers_min %}
               <option>{{follower_min}}
                 {% endfor %}
@@ -137,7 +137,7 @@
           <br />
           <center>
             <FONT face="sans-serif" size = 5><label for="model-select"><b>Number of followers max :</b></FONT></label>
-            <select name="follower_max" id="follower_max" class="form-control">
+            <select name="follower_max" id="follower_max" class="form-control" style="width:300px; text-align-last:center;">
               {% for follower_max in list_followers_max %}
               <option>{{follower_max}}
                 {% endfor %}
@@ -145,13 +145,15 @@
           </center>
           <br />
           <br />
+          <center>
           <FONT face="sans-serif" size = 5><label for="model-select" ><b>Type of influencer :</b></FONT></label>
-          <select name="theme" id="theme"  class="form-control">
-            <option for="theme" class="visually-hidden" >Theme</option>
+          <select name="theme" id="theme"  class="form-control" style="width:220px; text-align-last:center;">
+            <option for="theme" class="visually-hidden">Theme</option>
               {% for theme in list_themes %}
             <option>{{theme}}
               {% endfor %}
           </select>
+          </center>
           <br />
           <br />
           <button type="submit" name="system" value="system" form="SystemForm"
